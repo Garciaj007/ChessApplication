@@ -1,7 +1,7 @@
 package chessapplication;
 
 /**
- * @author Juriel Garcia, Kevin [LastName], Violet[LastName]
+ * @author Juriel Garcia, Kevin Tang, Violet[LastName]
  * @version 1.0.0
  */
 public class ChessApplication {
