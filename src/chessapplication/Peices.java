@@ -5,8 +5,9 @@ public abstract class Peices {
     /* Member Variables */
     //Contains the position of the peice
     private int x, y;
+    private int team;
     //The Placeholder for the peice
-    private String peice;
+    protected String peice;
 
     /* Getters */ 
     //Gets X & Y position
@@ -16,7 +17,9 @@ public abstract class Peices {
     public int getY() {
         return y;
     }
-    
+    public int getTeam(){
+        return team;
+    }
     //Returns Placeholder
     public String getPeice(){
         return peice;
@@ -24,9 +27,7 @@ public abstract class Peices {
     
     /* Abstract Methods */
     //Check if the piece can move to that place using rules
-    protected abstract boolean isAllowed();
-    //Checks the distance of the 
-    protected abstract int getDistance(Board board);
+    protected abstract boolean isAllowed(int x_, int y_);
     
     /* Member Methods */
     //Check If the board is available
@@ -38,7 +39,7 @@ public abstract class Peices {
     
     //Move to Position if rule applies
     protected void moveTo(Board b, int x_, int y_){
-        if(isAllowed()){
+        if(isAllowed(x_, y_)){
             x = x_;
             y = y_;
         } else {
@@ -47,8 +48,10 @@ public abstract class Peices {
     }
     
     //This method forcably sets a peices position
-    protected void Set(int x_, int y_){
+    protected void Set(int x_, int y_, int team_){
         x = x_;
         y = y_;
+        team = team_;
     }
+    
 }
