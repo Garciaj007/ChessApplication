@@ -10,7 +10,7 @@ public class Player {
     //# of Peices the player has taken, *NOTE* Can be change later to the actual peices
     private int piecesTaken;
     //Name of the player, optional
-    private String name;
+    private final String name;
     //Color of the player
     private final Color color;
     //check if the player is checkmate, and if the player has won

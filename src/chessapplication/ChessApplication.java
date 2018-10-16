@@ -8,9 +8,10 @@ public class ChessApplication {
 
     public static void main(String[] args) {
         Game g = new Game();
-        g.Create();
+        //g.create();
+        g.setup();
         while(g.getIsRunning()){
-            g.Run();
+            g.run();
         }
     }
     

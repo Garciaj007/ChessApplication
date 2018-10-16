@@ -1,18 +1,18 @@
 
 package chessapplication;
 
-public class Pawn extends Peices{
-    private int direction;
+public class Pawn extends Peice{
+    private final int direction;
 
     public Pawn(int _x, int _y, int _team) {
-        Set(_x, _y, _team);
+        super(_x, _y, _team);
         if(getTeam() == 0){
             direction = 1;
         }
         else{
             direction = -1;
         }       
-        this.peice = "Pawn";
+        this.peice = "p";
     }
     
     @Override

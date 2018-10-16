@@ -1,11 +1,11 @@
 
 package chessapplication;
 
-public class Rook extends Peices{
+public class Rook extends Peice{
 
     public Rook(int _x, int _y, int _team) {
-        Set(_x, _y, _team);
-        this.peice = "Rook";
+        super(_x, _y, _team);
+        this.peice = "R";
     }
     
     @Override

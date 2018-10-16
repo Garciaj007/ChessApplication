@@ -2,18 +2,20 @@
 package chessapplication;
 
 
-public class Bishop extends Peices{
+public class Bishop extends Peice{
 
     public Bishop(int _x, int _y, int _team) {
-        Set(_x, _y, _team);
-        this.peice = "Bishop";
+        super(_x, _y, _team);
+        this.peice = "B";
     }
     
     @Override
     protected boolean isAllowed(int x_, int y_) {
-        if(Math.abs(x_ - getX()) == Math.abs(y_ - getY()))
+        if(Math.abs(x_ - getX()) == Math.abs(y_ - getY())){
             return true;
-        else return false;
+        } else {
+            return false;
+        }
     }
     
 }

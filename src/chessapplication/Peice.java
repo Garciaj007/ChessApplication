@@ -1,6 +1,6 @@
 package chessapplication;
 
-public abstract class Peices {
+public abstract class Peice {
     
     /* Member Variables */
     //Contains the position of the peice
@@ -11,17 +11,17 @@ public abstract class Peices {
 
     /* Getters */ 
     //Gets X & Y position
-    public int getX() {
+    public final int getX() {
         return x;
     }
-    public int getY() {
+    public final int getY() {
         return y;
     }
-    public int getTeam(){
+    public final int getTeam(){
         return team;
     }
     //Returns Placeholder
-    public String getPeice(){
+    public final String getPeice(){
         return peice;
     }
     
@@ -29,11 +29,16 @@ public abstract class Peices {
     //Check if the piece can move to that place using rules
     protected abstract boolean isAllowed(int x_, int y_);
     
+    /* Constructor */
+    public Peice(int x_, int y_, int team_){
+        set(x_, y_, team_);
+    }
+    
     /* Member Methods */
     //Check If the board is available
-    protected boolean canMoveTo(int x_, int y_){
+    protected boolean canMoveTo(Board b_, int x_, int y_){
         //Check if blank space is available
-        
+      
         return true;
     }
     
@@ -48,7 +53,7 @@ public abstract class Peices {
     }
     
     //This method forcably sets a peices position
-    protected void Set(int x_, int y_, int team_){
+    protected final void set(int x_, int y_, int team_){
         x = x_;
         y = y_;
         team = team_;

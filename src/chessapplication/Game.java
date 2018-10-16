@@ -13,10 +13,16 @@ public class Game {
     private final Scanner scanner;
     //Player objects
     private Player p1, p2;
-   
+    //Peices
+    private Peice[] peices = new Peice[32];
+
     /* Getters */
     public boolean getIsRunning() {
         return isRunning;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 
     /* Constructor */
@@ -29,7 +35,7 @@ public class Game {
     }
 
     /* Member Methods */
-    public void Create() {
+    public void create() {
         //Player 1
         System.out.println("Player 1 please choose name");
         String name = scanner.nextLine();
@@ -57,22 +63,27 @@ public class Game {
     }
 
     //Game loop Here
-    public void Run() {
-        if(isGameContinuing){
-        board.PrintBoard();
-        Update();
+    public void run() {
+        if (isGameContinuing) {
+            board.clear();
+            for (Peice i : peices) {
+                //if not taken
+                board.place(i);
+            }
+            board.printBoard();
+            update();
         } else {
-            Destroy();
+            destroy();
         }
     }
 
     //Update the board here
-    private void Update() {
+    private void update() {
         //checks if the player has made a proper selection
         boolean turn = true;
-        
+
         //Player 1s Turn
-        while(turn){
+        while (turn) {
             System.out.println("Player 1 please select a peice");
             String p = scanner.nextLine();
             System.out.println("Player 1 please select an empty space");
@@ -82,14 +93,14 @@ public class Game {
             //check if the space is available
             //check if the peice can move there via the rules
             //if all conditions above are satisfied 
-                //move peice
-                turn = false;
-           
+            //move peice
+            turn = false;
+
         }
-        
+
         //Player 2s Turn
         turn = true;
-        while(turn){
+        while (turn) {
             System.out.println("Player 2 please select a peice");
             String p = scanner.nextLine();
             System.out.println("Player 2 please select an empty space");
@@ -99,42 +110,67 @@ public class Game {
             //check if the space is available
             //check if the peice can move there via the rules
             //if all conditions above are satisfied 
-                //move peice
-                turn = false;
-           
+            //move peice
+            turn = false;
+
         }
-        
+
         //Check Game pls
         checkGame();
     }
-    
+
     //Destroys the Game
-    private void Destroy(){
+    private void destroy() {
         isRunning = false;
         scanner.close();
     }
-    
+
     //Once game is over
-    private void GameOver(){
+    private void gameOver() {
         //Check who won
-        if(p1.getWon()){
+        if (p1.getWon()) {
             System.out.println("Player 1 has won!");
         } else {
             System.out.println("Player 2 has won!");
         }
-        
+
         //Setting Game Continuing to false
         isGameContinuing = false;
     }
-    
+
+    //
+    public void setup() {
+        peices[0] = new Rook(0, 0, 0);
+        peices[1] = new Knight(1, 0, 0);
+        peices[2] = new Bishop(2, 0, 0);
+        peices[3] = new King(3, 0, 0);
+        peices[4] = new Queen(4, 0, 0);
+        peices[5] = new Bishop(5, 0, 0);
+        peices[6] = new Knight(6, 0, 0);
+        peices[7] = new Rook(7, 0, 0);
+        for (int i = 8; i < 16; i++) {
+            peices[i] = new Pawn(i - 8, 1, 0);
+        }
+        for (int i = 16; i < 24; i++) {
+            peices[i] = new Pawn(i - 16, 6, 1);
+        }
+        peices[24] = new Rook(0, 7, 1);
+        peices[25] = new Knight(1, 7, 1);
+        peices[26] = new Bishop(2, 7, 1);
+        peices[27] = new King(3, 7, 1);
+        peices[28] = new Queen(4, 7, 1);
+        peices[29] = new Bishop(5, 7, 1);
+        peices[30] = new Knight(6, 7, 1);
+        peices[31] = new Rook(7, 7, 1);
+    }
+
     //Does multiple checks & Prints out who contains # peice of Peices
-    private void checkGame(){
+    private void checkGame() {
         //print out how many peices p1 & p2 has
-        
+
         //print out how many peices are on board
-        
         //check if the game is over
         //if true
-            //GameOver();
+        //GameOver();
     }
 }

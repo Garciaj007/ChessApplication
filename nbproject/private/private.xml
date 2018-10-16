@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Game.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Peices.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/King.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Board.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Bishop.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Pawn.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/ChessApplication.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Knight.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Queen.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Player.java</file>
-            <file>file:/C:/Users/Violet/Documents/GitHub/ChessApplication/src/chessapplication/Rook.java</file>
+            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Peice.java</file>
+            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/ChessApplication.java</file>
+            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Player.java</file>
+            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Board.java</file>
+            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Game.java</file>
         </group>
     </open-files>
 </project-private>
