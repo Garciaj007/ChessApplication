@@ -4,7 +4,7 @@ package chessapplication;
 
 public class Knight extends Peice{
 
-    public Knight(int _x, int _y, int _team) {
+    public Knight(int _x, int _y, Color _team) {
         super(_x, _y, _team);
         this.peice = "H";
     }

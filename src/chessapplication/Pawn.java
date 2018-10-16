@@ -4,13 +4,13 @@ package chessapplication;
 public class Pawn extends Peice{
     private final int direction;
 
-    public Pawn(int _x, int _y, int _team) {
+    public Pawn(int _x, int _y, Color _team) {
         super(_x, _y, _team);
-        if(getTeam() == 0){
+        if(getTeam() == Peice.Color.White){
             direction = 1;
         }
         else{
-            direction = -1;
+        direction = -1;
         }       
         this.peice = "p";
     }

@@ -3,7 +3,7 @@ package chessapplication;
 
 public class Queen extends Peice{
 
-    public Queen(int _x, int _y, int _team) {
+    public Queen(int _x, int _y, Color _team) {
         super(_x, _y, _team);
         this.peice = "Q";
     }

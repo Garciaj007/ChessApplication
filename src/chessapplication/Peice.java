@@ -3,9 +3,12 @@ package chessapplication;
 public abstract class Peice {
     
     /* Member Variables */
+    //Team Chosen
+    public static enum Color{White, Black};
+    
     //Contains the position of the peice
     private int x, y;
-    private int team;
+    private Color team;
     //The Placeholder for the peice
     protected String peice;
 
@@ -17,7 +20,7 @@ public abstract class Peice {
     public final int getY() {
         return y;
     }
-    public final int getTeam(){
+    public final Color getTeam(){
         return team;
     }
     //Returns Placeholder
@@ -25,25 +28,20 @@ public abstract class Peice {
         return peice;
     }
     
-    /* Abstract Methods */
-    //Check if the piece can move to that place using rules
-    protected abstract boolean isAllowed(int x_, int y_);
-    
     /* Constructor */
-    public Peice(int x_, int y_, int team_){
+    public Peice(int x_, int y_, Color team_){
         set(x_, y_, team_);
     }
     
-    /* Member Methods */
-    //Check If the board is available
-    protected boolean canMoveTo(Board b_, int x_, int y_){
-        //Check if blank space is available
-      
-        return true;
-    }
     
+    /* Abstract Methods */
+    //Check if the piece can move to that place using rules
+    protected abstract boolean isAllowed(int x_, int y_);
+    protected abstract boolean canMoveTo(Board b, int x_,int y_);
+    
+    /* Member Methods */
     //Move to Position if rule applies
-    protected void moveTo(Board b, int x_, int y_){
+    protected void moveTo(String[][] b, int x_, int y_){
         if(isAllowed(x_, y_)){
             x = x_;
             y = y_;
@@ -53,7 +51,7 @@ public abstract class Peice {
     }
     
     //This method forcably sets a peices position
-    protected final void set(int x_, int y_, int team_){
+    protected final void set(int x_, int y_, Color team_){
         x = x_;
         y = y_;
         team = team_;

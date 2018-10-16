@@ -140,28 +140,28 @@ public class Game {
 
     //
     public void setup() {
-        peices[0] = new Rook(0, 0, 0);
-        peices[1] = new Knight(1, 0, 0);
-        peices[2] = new Bishop(2, 0, 0);
-        peices[3] = new King(3, 0, 0);
-        peices[4] = new Queen(4, 0, 0);
-        peices[5] = new Bishop(5, 0, 0);
-        peices[6] = new Knight(6, 0, 0);
-        peices[7] = new Rook(7, 0, 0);
+        peices[0] = new Rook(0, 0, Peice.Color.White);
+        peices[1] = new Knight(1, 0, Peice.Color.White);
+        peices[2] = new Bishop(2, 0, Peice.Color.White);
+        peices[3] = new King(3, 0, Peice.Color.White);
+        peices[4] = new Queen(4, 0, Peice.Color.White);
+        peices[5] = new Bishop(5, 0, Peice.Color.White);
+        peices[6] = new Knight(6, 0, Peice.Color.White);
+        peices[7] = new Rook(7, 0, Peice.Color.White);
         for (int i = 8; i < 16; i++) {
-            peices[i] = new Pawn(i - 8, 1, 0);
+            peices[i] = new Pawn(i - 8, 1, Peice.Color.White);
         }
         for (int i = 16; i < 24; i++) {
-            peices[i] = new Pawn(i - 16, 6, 1);
+            peices[i] = new Pawn(i - 16, 6, Peice.Color.Black);
         }
-        peices[24] = new Rook(0, 7, 1);
-        peices[25] = new Knight(1, 7, 1);
-        peices[26] = new Bishop(2, 7, 1);
-        peices[27] = new King(3, 7, 1);
-        peices[28] = new Queen(4, 7, 1);
-        peices[29] = new Bishop(5, 7, 1);
-        peices[30] = new Knight(6, 7, 1);
-        peices[31] = new Rook(7, 7, 1);
+        peices[24] = new Rook(0, 7, Peice.Color.Black);
+        peices[25] = new Knight(1, 7, Peice.Color.Black);
+        peices[26] = new Bishop(2, 7, Peice.Color.Black);
+        peices[27] = new King(3, 7, Peice.Color.Black);
+        peices[28] = new Queen(4, 7, Peice.Color.Black);
+        peices[29] = new Bishop(5, 7, Peice.Color.Black);
+        peices[30] = new Knight(6, 7, Peice.Color.Black);
+        peices[31] = new Rook(7, 7, Peice.Color.Black);
     }
 
     //Does multiple checks & Prints out who contains # peice of Peices
