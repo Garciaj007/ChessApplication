@@ -8,7 +8,7 @@ public class ChessApplication {
 
     public static void main(String[] args) {
         Game g = new Game();
-        
+        g.Create();
         while(g.getIsRunning()){
             g.Run();
         }

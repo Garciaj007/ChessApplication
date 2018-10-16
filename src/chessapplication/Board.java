@@ -21,6 +21,8 @@ public class Board {
     /* Member Methods */
     //Inserts peices on the board || this should be called on the update loop
     public void Insert(Peices peice){
+        //If peice was not taken then print on board;
+        if(!peice.getTaken())
         s_board[peice.getX()][peice.getY()] = peice.getPeice();
     }
     
