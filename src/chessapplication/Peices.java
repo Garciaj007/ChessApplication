@@ -7,14 +7,30 @@ public abstract class Peices {
     private int x, y;
     //The Placeholder for the peice
     private String peice;
+    //The Peices Color/Player attached to 
+    private Player playerAttachedTo;
+    //If the peices was taken or not
+    private boolean taken;
 
-    /* Getters */ 
+    /* Getters & Setters*/ 
     //Gets X & Y position
     public int getX() {
         return x;
     }
     public int getY() {
         return y;
+    }
+    public boolean getTaken(){
+        return taken;
+    }
+    public void setTaken(boolean value){
+        taken = value;
+    }
+    
+    //Contructor
+    //Experimental
+    public Peices(Player player){
+        playerAttachedTo = player;
     }
     
     //Returns Placeholder
