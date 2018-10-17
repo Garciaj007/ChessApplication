@@ -50,7 +50,7 @@ public abstract class Peice {
 
     //Checks if space is available
     protected boolean canMoveTo(int x_, int y_){
-        if(Game.getGameBoard().getBoard()[y_][x_] == null)
+        if(Game.getGameBoard().getBoard()[y_][x_] == null && x_ < 8 && y_ < 8)
             return true;
         else return false;
     }

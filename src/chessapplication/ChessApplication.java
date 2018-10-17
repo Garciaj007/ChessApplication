@@ -8,8 +8,8 @@ public class ChessApplication {
 
     public static void main(String[] args) {
         Game g = new Game();
-        //g.create();
         g.setup();
+        g.create();
         while(g.getIsRunning()){
             g.run();
         }

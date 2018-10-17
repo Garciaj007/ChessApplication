@@ -14,7 +14,7 @@ public class Game {
     //Player objects
     private Player p1, p2;
     //Used for initialization
-    private Peice[] peices = new Peice[32];
+    private final Peice[] peices;
 
     /* Getters */
     public boolean getIsRunning() {
@@ -33,6 +33,7 @@ public class Game {
         board = new Board();
         isRunning = true;
         isGameContinuing = true;
+        peices = new Peice[32];
     }
 
     /* Member Methods */
@@ -44,7 +45,7 @@ public class Game {
         String color = scanner.nextLine();
 
         //Checks Decision
-        if (color.equals("WHITE") || color.equals("white")) {
+        if (color.equals("WHITE") || color.equals("white") || color.equals("White")) {
             p1 = new Player(Player.Color.White, name);
         } else {
             p1 = new Player(Player.Color.Black, name);
@@ -61,62 +62,97 @@ public class Game {
         } else {
             p2 = new Player(Player.Color.White, name);
         }
+        
+        //Print out players and thier associated color
+        System.out.println("\nPlayer 1: " + p1.getName() + " : " + p1.getColor().name() + " | Player 2: " + p2.getName() + " : " + p2.getColor().name() + "\n");
     }
 
     //Game loop Here
     public void run() {
         if (isGameContinuing) {
-            board.clear();
-            for (Peice i : peices) {
-                //if not taken
-                board.place(i);
-            }
-            board.printBoard();
             update();
         } else {
             destroy();
         }
     }
+    
+    private void updateAndDisplayBoard(){
+        //Clears the board
+        board.clear();
+        for (Peice p : peices) {
+            if (p != null) {
+                board.place(p);
+            }
+        }
+        //Print the board
+        board.printBoard();
+    }
 
     //Update the board here
     private void update() {
+        updateAndDisplayBoard();
+        
         //checks if the player has made a proper selection
         boolean turn = true;
 
         //Player 1s Turn
         while (turn) {
-            System.out.println("Player 1 please select a peice");
-            String p = scanner.nextLine();
-            System.out.println("Player 1 please select an empty space");
-            int x = scanner.nextInt();
-            int y = scanner.nextInt();
-            //get peices
-            //check if the space is available
-            //check if the peice can move there via the rules
-            //if all conditions above are satisfied 
-            //move peice
-            turn = false;
-
+            Peice peiceSelected = null;
+            System.out.println("Player 1 please select a peice using X & Y values");
+            System.out.print("PosX: ");
+            int x = scanner.nextInt() - 1;
+            System.out.print("PosY: ");
+            int y = scanner.nextInt() - 1;
+            if(x < 8 && y < 8)
+                peiceSelected = board.getBoard()[y][x];
+            if (peiceSelected != null && peiceSelected.getTeam().name().equals(p1.getColor().name())) {
+                System.out.println("Player 1 please select an empty space");
+                System.out.print("PosX: ");
+                x = scanner.nextInt() - 1;
+                System.out.print("PosY: ");
+                y = scanner.nextInt() - 1;
+                //check if the space is available
+                if (peiceSelected.canMoveTo(x, y)) {
+                    peiceSelected.moveTo(x, y);
+                    turn = false;
+                } else {
+                    System.out.println("\nInvalid Selection/Move made, please select again\n");
+                }
+            } else {
+                System.out.println("\nInvalid Selection made, please select again\n");
+            }
         }
-
+        updateAndDisplayBoard();
         //Player 2s Turn
         turn = true;
         while (turn) {
-            System.out.println("Player 2 please select a peice");
-            String p = scanner.nextLine();
-            System.out.println("Player 2 please select an empty space");
-            int x = scanner.nextInt();
-            int y = scanner.nextInt();
-            //get peices
-            //check if the space is available
-            //check if the peice can move there via the rules
-            //if all conditions above are satisfied 
-            //move peice
-            turn = false;
-
+            Peice peiceSelected = null;
+            System.out.println("Player 2 please select a peice using X & Y values");
+            System.out.print("PosX: ");
+            int x = scanner.nextInt() - 1;
+            System.out.print("PosY: ");
+            int y = scanner.nextInt() - 1;
+            if(x < 8 && y < 8)
+                peiceSelected = board.getBoard()[y][x];
+            if (peiceSelected != null && peiceSelected.getTeam().name().equals(p2.getColor().name())) {
+                System.out.println("Player 2 please select an empty space");
+                System.out.print("PosX: ");
+                x = scanner.nextInt() - 1;
+                System.out.print("PosY: ");
+                y = scanner.nextInt() - 1;
+                //check if the space is available
+                if (peiceSelected.canMoveTo(x, y)) {
+                    peiceSelected.moveTo(x, y);
+                    turn = false;
+                } else {
+                    System.out.println("\nInvalid Selection/Move made, please select again\n");
+                }
+            } else {
+                System.out.println("\nInvalid Selection made, please select again\n");
+            }
         }
-
-        //Check Game pls
+        updateAndDisplayBoard();
+        //Checks Game
         checkGame();
     }
 
@@ -139,7 +175,7 @@ public class Game {
         isGameContinuing = false;
     }
 
-    //
+    //This creates peices for the board manually
     public void setup() {
         peices[0] = new Rook(0, 0, Peice.Color.White);
         peices[1] = new Knight(1, 0, Peice.Color.White);
