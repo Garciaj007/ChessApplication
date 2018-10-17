@@ -10,6 +10,7 @@ public class Bishop extends Peice{
     }
     
     @Override
+    // returns true when the change in x and y is equal, meaning the piece moves diagonally
     protected boolean isAllowed(int x_, int y_) {
         if(Math.abs(x_ - getX()) == Math.abs(y_ - getY())){
             return true;

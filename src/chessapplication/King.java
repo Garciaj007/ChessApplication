@@ -9,6 +9,7 @@ public class King extends Peice{
     }
     
     @Override
+    // returns true if the change coordinates equals one in any direction
     protected boolean isAllowed(int x_, int y_) {
         if(Math.abs(x_ - getX()) == 1 || Math.abs(y_ - getY()) == 1 || Math.abs(x_ - getX()) == 1 && Math.abs(y_ - getY()) == 1)
             return true;
