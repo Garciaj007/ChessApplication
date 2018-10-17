@@ -6,14 +6,14 @@ public class Game {
 
     /* Member Variables */
     //Board Object
-    private final Board board;
+    private static Board board;
     //Check if the game is still running & the game is still continuing
     private boolean isRunning, isGameContinuing;
     //Scanner
     private final Scanner scanner;
     //Player objects
     private Player p1, p2;
-    //Peices
+    //Used for initialization
     private Peice[] peices = new Peice[32];
 
     /* Getters */
@@ -21,7 +21,8 @@ public class Game {
         return isRunning;
     }
 
-    public Board getBoard() {
+    //!
+    public static Board getGameBoard() {
         return board;
     }
 

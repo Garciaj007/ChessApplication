@@ -2,54 +2,65 @@ package chessapplication;
 
 //Final
 public class Board {
+
     /* Member Variables */
-    private final String[][] s_board = new String[8][8];
-    
-    public String[][] getBoard(){
-        return s_board;
+    private final Peice[][] board = new Peice[8][8];
+
+    public Peice[][] getBoard() {
+        return board;
     }
-    
-    /* Constuctor */ 
+
+    /* Constuctor */
     //Creates a blank board
-    public Board(){
+    public Board() {
         //Where i = x; & j = y; to get space coords are [j][i] or [y][x]
-        for(int i = 0; i < s_board.length; i++){
-            for(int j = 0; j < s_board[i].length; j++){
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
                 //Signal for empty space
-                s_board[j][i] = "##";
+                board[j][i] = null;
             }
         }
     }
 
     /* Member Methods */
     //Inserts peices on the board || this should be called on the update loop
-    public void place(Peice peice){
+    public void place(Peice peice) {
         //If peice was not taken then print on board;
-        s_board[peice.getY()][peice.getX()] = peice.getPeice() + peice.getTeam();
+        board[peice.getY()][peice.getX()] = peice;
     }
-    
+
     //Resets board to ##
-    public void clear(){
-        for(int i = 0; i < s_board.length; i++){
-            for(int j = 0; j < s_board[i].length; j++){
+    public void clear() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
                 //Signal for empty space
-                s_board[j][i] = "##";
+                board[j][i] = null;
             }
         }
     }
-    
+
     //Prints the board out to console 
-    public void printBoard(){
-        for(int i = 0; i < 8; i++){
+    public void printBoard() {
+        int c = 1; 
+        System.out.println("  X  1       2       3       4       5       6       7       8");
+        System.out.print("Y");
+        for (int i = 0; i < 8; i++) {
             System.out.print("   --   ");
         }
         System.out.println();
-        for(String[] s : s_board){
-            for(String a : s){
-                System.out.print(" | " + a + " | ");
+        for (Peice[] p : board) {
+            System.out.print(c);
+            c++;
+            for (Peice a : p) {
+                if (a == null) {
+                    System.out.print(" | ## | ");
+                } else {
+                    System.out.print(" | " + a.getPeice() + " | ");
+                }
             }
             System.out.println();
-            for(String a : s){
+            System.out.print(" ");
+            for (Peice a : p) {
                 System.out.print("   --   ");
             }
             System.out.println();

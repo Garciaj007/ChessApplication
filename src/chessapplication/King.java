@@ -14,5 +14,4 @@ public class King extends Peice{
             return true;
         else return false;
     }
-    
 }
