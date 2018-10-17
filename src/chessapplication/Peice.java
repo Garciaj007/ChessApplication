@@ -52,6 +52,10 @@ public abstract class Peice {
     protected boolean canMoveTo(int x_, int y_){
         if(Game.getGameBoard().getBoard()[y_][x_] == null && x_ < 8 && y_ < 8)
             return true;
+        else if (Game.getGameBoard().getBoard()[y_][x_] != null && Game.getGameBoard().getBoard()[y_][x_].team != team){
+            Game.getGameBoard().getBoard()[y_][x_] = null;
+            return true;
+        }
         else return false;
     }
 

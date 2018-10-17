@@ -10,6 +10,7 @@ public class Knight extends Peice{
     }
     
     @Override
+    // returns true when the change in spaces is equal to 3, but not when it moves in a straight line
     protected boolean isAllowed(int x_, int y_) {
         if(Math.abs(x_ - getX()) + Math.abs(y_ - getY()) == 3 && Math.abs(x_ - getX()) != 3 && Math.abs(y_ - getY()) != 3)
             return true;
