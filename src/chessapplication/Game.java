@@ -15,7 +15,49 @@ public class Game {
     private Player p1, p2;
     //Used for initialization
     private final Peice[] peices;
-
+    
+    //Note: pseudo code
+    //Start menu which will need to run once the game starts
+    public void startMenu() {
+        //Print output options asking to load the saved game or start a new one
+        System.out.println("Welcome to Chess! Enter an option.");
+        System.out.println("Load or New");
+        
+        //read player input option
+        String input = scanner.nextLine();        
+        if(input.equalsIgnoreCase("Load")){
+            //Load existing game from stored file
+            LoadGame L = new LoadGame();
+            L.LoadGame();         
+        } else if (input.equalsIgnoreCase("New")) {
+            //Create new brand new game
+            create();
+        } else {
+            System.out.println("Please enter a valid option.");
+            input = scanner.nextLine();
+        }
+    }
+    
+    //exitMenu triggered from update() when player enters exit
+    private void exitMenu() {
+        System.out.println("Enter an option.");
+        System.out.println("Save or Quit");
+        
+        //read player input option
+        String input = scanner.nextLine();        
+        if(input.equalsIgnoreCase("Save")){
+            //Load existing game from stored file
+            SaveGame S = new SaveGame();
+            S.SaveGame();         
+        } else if (input.equalsIgnoreCase("Quit")) {
+            //Close the application
+            
+        } else {
+            System.out.println("Please enter a valid option.");
+            input = scanner.nextLine();
+        }
+    }
+    
     /* Getters */
     public boolean getIsRunning() {
         return isRunning;
@@ -210,4 +252,5 @@ public class Game {
         //if true
         //GameOver();
     }
+    
 }
