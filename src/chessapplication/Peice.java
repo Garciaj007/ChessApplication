@@ -1,6 +1,6 @@
 package chessapplication;
 
-public abstract class Peice {
+public abstract class Peice implements java.io.Serializable {
 
     /* Member Variables */
     //Team Chosen

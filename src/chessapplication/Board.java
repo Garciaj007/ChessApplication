@@ -4,10 +4,14 @@ package chessapplication;
 public class Board {
 
     /* Member Variables */
-    private final Peice[][] board = new Peice[8][8];
+    private Peice[][] board = new Peice[8][8];
 
     public Peice[][] getBoard() {
         return board;
+    }
+    
+    public void setBoard(Peice[][] _board){
+        board = _board;
     }
 
     /* Constuctor */

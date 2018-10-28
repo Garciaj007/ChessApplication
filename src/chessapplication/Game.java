@@ -15,55 +15,14 @@ public class Game {
     private Player p1, p2;
     //Used for initialization
     private final Peice[] peices;
-    
-    //Note: pseudo code
-    //Start menu which will need to run once the game starts
-    public void startMenu() {
-        //Print output options asking to load the saved game or start a new one
-        System.out.println("Welcome to Chess! Enter an option.");
-        System.out.println("Load or New");
-        
-        //read player input option
-        String input = scanner.nextLine();        
-        if(input.equalsIgnoreCase("Load")){
-            //Load existing game from stored file
-            LoadGame L = new LoadGame();
-            L.LoadGame();         
-        } else if (input.equalsIgnoreCase("New")) {
-            //Create new brand new game
-            create();
-        } else {
-            System.out.println("Please enter a valid option.");
-            input = scanner.nextLine();
-        }
-    }
-    
-    //exitMenu triggered from update() when player enters exit
-    private void exitMenu() {
-        System.out.println("Enter an option.");
-        System.out.println("Save or Quit");
-        
-        //read player input option
-        String input = scanner.nextLine();        
-        if(input.equalsIgnoreCase("Save")){
-            //Load existing game from stored file
-            SaveGame S = new SaveGame();
-            S.SaveGame();         
-        } else if (input.equalsIgnoreCase("Quit")) {
-            //Close the application
-            
-        } else {
-            System.out.println("Please enter a valid option.");
-            input = scanner.nextLine();
-        }
-    }
-    
+    //Used for saving and loading the game
+    private SaveLoadManager manager;
+
     /* Getters */
     public boolean getIsRunning() {
         return isRunning;
     }
 
-    //!
     public static Board getGameBoard() {
         return board;
     }
@@ -104,7 +63,7 @@ public class Game {
         } else {
             p2 = new Player(Player.Color.White, name);
         }
-        
+
         //Print out players and thier associated color
         System.out.println("\nPlayer 1: " + p1.getName() + " : " + p1.getColor().name() + " | Player 2: " + p2.getName() + " : " + p2.getColor().name() + "\n");
     }
@@ -117,8 +76,8 @@ public class Game {
             destroy();
         }
     }
-    
-    private void updateAndDisplayBoard(){
+
+    private void updateAndDisplayBoard() {
         //Clears the board
         board.clear();
         for (Peice p : peices) {
@@ -133,7 +92,7 @@ public class Game {
     //Update the board here
     private void update() {
         updateAndDisplayBoard();
-        
+
         //checks if the player has made a proper selection
         boolean turn = true;
 
@@ -145,8 +104,9 @@ public class Game {
             int x = scanner.nextInt() - 1;
             System.out.print("PosY: ");
             int y = scanner.nextInt() - 1;
-            if(x < 8 && y < 8)
+            if (x < 8 && y < 8) {
                 peiceSelected = board.getBoard()[y][x];
+            }
             if (peiceSelected != null && peiceSelected.getTeam().name().equals(p1.getColor().name())) {
                 System.out.println("Player 1 please select an empty space");
                 System.out.print("PosX: ");
@@ -174,8 +134,9 @@ public class Game {
             int x = scanner.nextInt() - 1;
             System.out.print("PosY: ");
             int y = scanner.nextInt() - 1;
-            if(x < 8 && y < 8)
+            if (x < 8 && y < 8) {
                 peiceSelected = board.getBoard()[y][x];
+            }
             if (peiceSelected != null && peiceSelected.getTeam().name().equals(p2.getColor().name())) {
                 System.out.println("Player 2 please select an empty space");
                 System.out.print("PosX: ");
@@ -242,6 +203,85 @@ public class Game {
         peices[30] = new Knight(6, 7, Peice.Color.Black);
         peices[31] = new Rook(7, 7, Peice.Color.Black);
     }
+    
+    //Start menu which will need to run once the game starts
+    public void startMenu() {
+        //creates a SaveLoadManager object
+        manager = new SaveLoadManager();
+        boolean temp = true;
+        //Print output options asking to load the saved game or start a new one
+        System.out.println("Welcome to Chess! Enter an option.");
+        System.out.println("Load or New");
+
+        while (temp) {
+            //read player input option
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("Load")) {
+                //Load existing game from stored file
+                //Check if manager can load game
+                if (manager.canLoadGame()) {
+                    //set the board to the data in the manager
+                    board.setBoard(manager.loadGame());
+                    temp = false;
+                } else {
+                    System.out.println("Cannot load Game, no such file exists");
+                }
+
+            } else if (input.equalsIgnoreCase("New")) {
+                //Create new brand new game
+                setup();
+                create();
+                temp = false;
+            } else {
+                System.out.println("Please enter a valid option.");
+            }
+        }
+    }
+    
+    //Pause Menu for when players need to quit
+    private void pauseMenu(){
+        System.out.println("Game Paused");
+        System.out.println("Resume or Quit?");
+        
+        boolean temp = true;
+        
+        while(temp){
+            String input = scanner.nextLine();
+            
+            //Resumes Game
+            if(input.equalsIgnoreCase("Resume")){
+                return;
+            //Quits Game
+            } else if(input.equalsIgnoreCase("Quit")){
+                isRunning = false;
+            } else {
+                System.out.println("Please enter a valid option.");
+            }
+        }
+    }
+
+    //exitMenu triggered once when players enters exit
+    public void exitMenu() {
+        System.out.println("Enter an option.");
+        System.out.println("Save or Quit");
+
+        boolean temp = true;
+
+        while (temp) {
+            //read player input option
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("Save")) {
+                //Load existing game from stored file
+                manager.saveGame(board.getBoard());
+                temp = false;
+            } else if (input.equalsIgnoreCase("Quit")) {
+                //Close the application
+                temp = false;
+            } else {
+                System.out.println("Please enter a valid option.");
+            }
+        }
+    }
 
     //Does multiple checks & Prints out who contains # peice of Peices
     private void checkGame() {
@@ -252,5 +292,5 @@ public class Game {
         //if true
         //GameOver();
     }
-    
+
 }
