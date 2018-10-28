@@ -5,11 +5,10 @@
         <group>
             <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Peice.java</file>
             <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/ChessApplication.java</file>
-            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/LoadGame.java</file>
             <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Player.java</file>
             <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Board.java</file>
-            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/SaveGame.java</file>
             <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/Game.java</file>
+            <file>file:/C:/Development/Java/ChessApplication/src/chessapplication/SaveLoadManager.java</file>
         </group>
     </open-files>
 </project-private>
