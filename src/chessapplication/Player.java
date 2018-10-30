@@ -48,6 +48,7 @@ public class Player {
        color = color_;
        piecesOnBoard = 16;
        piecesTaken = 0;
+       won = false;
     }
     
     /* Member Methods */

@@ -7,7 +7,7 @@ public abstract class Peice implements java.io.Serializable {
     public static enum Color {
         White, Black
     };
-
+    private boolean isDead = false;
     //Contains the position of the peice
     private int x, y;
     //Contains the teams color
@@ -29,6 +29,14 @@ public abstract class Peice implements java.io.Serializable {
         return team;
     }
 
+    public boolean isIsDead() {
+        return isDead;
+    }
+
+    public void setIsDead(boolean _isDead) {
+        isDead = _isDead;
+    }
+    
     //Returns Placeholder
     public final String getPeice() {
         String temp;
@@ -53,7 +61,6 @@ public abstract class Peice implements java.io.Serializable {
         if(Game.getGameBoard().getBoard()[y_][x_] == null && x_ < 8 && y_ < 8)
             return true;
         else if (Game.getGameBoard().getBoard()[y_][x_] != null && Game.getGameBoard().getBoard()[y_][x_].team != team){
-            Game.getGameBoard().getBoard()[y_][x_] = null;
             return true;
         }
         else return false;
@@ -62,10 +69,16 @@ public abstract class Peice implements java.io.Serializable {
     /* Member Methods */
     //Move to Position if rule applies
     protected void moveTo(int x_, int y_) {
-        if (isAllowed(x_, y_) && canMoveTo(x_, y_)) {
+        if (Game.getGameBoard().getBoard()[y_][x_] == null && isAllowed(x_, y_) && canMoveTo(x_, y_)) {
             x = x_;
             y = y_;
-        } else {
+        } else if(Game.getGameBoard().getBoard()[y_][x_].team != team && isAllowed(x_, y_) && canMoveTo(x_, y_)) {
+            Game.getGameBoard().getBoard()[y_][x_].setIsDead(true);
+            Game.getGameBoard().removePiece(x_, y_);
+            x = x_;
+            y = y_;
+        }
+        else {
             System.out.println("Cannot perform Action, Choose Legal Action pls.");
         }
     }

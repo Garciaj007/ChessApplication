@@ -20,30 +20,29 @@ public class SaveLoadManager {
         return false;
     }
 
-    //Loads the board array
-    public Peice[][] loadGame(){
+    //Loads the pieces
+    public Peice[] loadGame(){
             //Retrieve Peice[][] 
             try(ObjectInputStream in = new ObjectInputStream(
             new BufferedInputStream(
-            new FileInputStream(filepath)))){
-                //DEBUG ONLY, CHANGE PLS
-                //try to get input into Peice[][] 
+            new FileInputStream(filepath)))){ 
+                //try to get input into Peice[]
                 
-                String str = (String)in.readObject();
-                System.out.println(str);
+                Peice[] pieces = (Peice[])in.readObject();
+                return pieces;
             } catch (IOException | ClassNotFoundException e){
                 System.err.println(e.getMessage());
             }
-        return null;
+            return null;
     }
     
-    //Saves the current Board Array of Peices as an object
-    public void saveGame(Peice[][] board){
+    //Saves the current Array of Peices as an object
+    public void saveGame(Peice[] _pieces){
         try(ObjectOutputStream out = new ObjectOutputStream(
                                      new BufferedOutputStream(
                                      new FileOutputStream(filepath)))){
+            out.writeObject(_pieces);
             
-            out.writeObject(board);
         }catch (IOException e){
             System.err.println(e.getMessage());
         } 
