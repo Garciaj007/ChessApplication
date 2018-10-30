@@ -243,6 +243,7 @@ public class Game {
                 if (manager.canLoadGame()) {
                     //set the board to the data in the manager
                     loadPieces(manager.loadGame());
+                    System.out.println("Game Loaded Successfully...");
                     create();
                     temp = false;
                 } else {
@@ -310,7 +311,7 @@ public class Game {
     //Does multiple checks & Prints out who contains # peice of Peices
     private void checkGame() {
         for(Peice a : peices){
-            if(a.isIsDead()){
+            if(a != null && a.isIsDead()){
                 a = null;
             }
         }
