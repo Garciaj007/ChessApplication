@@ -2,7 +2,8 @@
 package chessapplication;
 
 public class King extends Peice{
-
+    
+    
     public King(int _x, int _y, Color _team) {
         super(_x, _y, _team);
         this.peice = "K";

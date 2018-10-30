@@ -14,7 +14,7 @@ public class Game {
     //Player objects
     private Player p1, p2;
     //Used for initialization
-    private final Peice[] peices;
+    private Peice[] peices;
     //Used for saving and loading the game
     private SaveLoadManager manager;
 
@@ -81,7 +81,7 @@ public class Game {
         //Clears the board
         board.clear();
         for (Peice p : peices) {
-            if (p != null) {
+            if (p != null && !p.isIsDead()) {
                 board.place(p);
             }
         }
@@ -99,62 +99,77 @@ public class Game {
         //Player 1s Turn
         while (turn) {
             Peice peiceSelected = null;
-            System.out.println("Player 1 please select a peice using X & Y values");
+            System.out.println("Player 1 please select a peice using X & Y values or enter pause.");
             System.out.print("PosX: ");
-            int x = scanner.nextInt() - 1;
-            System.out.print("PosY: ");
-            int y = scanner.nextInt() - 1;
-            if (x < 8 && y < 8) {
-                peiceSelected = board.getBoard()[y][x];
-            }
-            if (peiceSelected != null && peiceSelected.getTeam().name().equals(p1.getColor().name())) {
-                System.out.println("Player 1 please select an empty space");
-                System.out.print("PosX: ");
-                x = scanner.nextInt() - 1;
+            if(scanner.hasNextInt()){
+                int x = scanner.nextInt() - 1;
                 System.out.print("PosY: ");
-                y = scanner.nextInt() - 1;
-                //check if the space is available
-                if (peiceSelected.canMoveTo(x, y)) {
-                    peiceSelected.moveTo(x, y);
-                    turn = false;
-                } else {
-                    System.out.println("\nInvalid Selection/Move made, please select again\n");
+                int y = scanner.nextInt() - 1;
+                if (x < 8 && y < 8) {
+                    peiceSelected = board.getBoard()[y][x];
                 }
-            } else {
-                System.out.println("\nInvalid Selection made, please select again\n");
+                if (peiceSelected != null && peiceSelected.getTeam().name().equals(p1.getColor().name()) && !peiceSelected.isIsDead()) {
+                    System.out.println("Player 1 please select an destination");
+                    System.out.print("PosX: ");
+                    x = scanner.nextInt() - 1;
+                    System.out.print("PosY: ");
+                    y = scanner.nextInt() - 1;
+                    //check if the space is available
+                    if (peiceSelected.canMoveTo(x, y)) {
+                        peiceSelected.moveTo(x, y);
+                        turn = false;
+                    } else {
+                        System.out.println("\nInvalid Selection/Move made, please select again\n");
+                    }
+                } else {
+                    System.out.println("\nInvalid Selection made, please select again\n");
+                }
+            }else if (scanner.hasNext("pause") || scanner.hasNext("Pause")){
+                pauseMenu();
+                if(!isRunning)
+                    break;
             }
         }
-        updateAndDisplayBoard();
+        if(isGameContinuing)
+            updateAndDisplayBoard();
+        checkGame();
         //Player 2s Turn
         turn = true;
-        while (turn) {
+        while (turn && isGameContinuing) {
             Peice peiceSelected = null;
-            System.out.println("Player 2 please select a peice using X & Y values");
+            System.out.println("Player 2 please select a peice using X & Y values or enter pause.");
             System.out.print("PosX: ");
-            int x = scanner.nextInt() - 1;
-            System.out.print("PosY: ");
-            int y = scanner.nextInt() - 1;
-            if (x < 8 && y < 8) {
-                peiceSelected = board.getBoard()[y][x];
-            }
-            if (peiceSelected != null && peiceSelected.getTeam().name().equals(p2.getColor().name())) {
-                System.out.println("Player 2 please select an empty space");
-                System.out.print("PosX: ");
-                x = scanner.nextInt() - 1;
+            if(scanner.hasNextInt()){
+                int x = scanner.nextInt() - 1;
                 System.out.print("PosY: ");
-                y = scanner.nextInt() - 1;
-                //check if the space is available
-                if (peiceSelected.canMoveTo(x, y)) {
-                    peiceSelected.moveTo(x, y);
-                    turn = false;
-                } else {
-                    System.out.println("\nInvalid Selection/Move made, please select again\n");
+                int y = scanner.nextInt() - 1;
+                if (x < 8 && y < 8) {
+                    peiceSelected = board.getBoard()[y][x];
                 }
-            } else {
-                System.out.println("\nInvalid Selection made, please select again\n");
+                if (peiceSelected != null && peiceSelected.getTeam().name().equals(p2.getColor().name()) && !peiceSelected.isIsDead()) {
+                    System.out.println("Player 2 please select an destination space");
+                    System.out.print("PosX: ");
+                    x = scanner.nextInt() - 1;
+                    System.out.print("PosY: ");
+                    y = scanner.nextInt() - 1;
+                    //check if the space is available
+                    if (peiceSelected.canMoveTo(x, y)) {
+                        peiceSelected.moveTo(x, y);
+                        turn = false;
+                    } else {
+                        System.out.println("\nInvalid Selection/Move made, please select again\n");
+                    }
+                } else {
+                    System.out.println("\nInvalid Selection made, please select again\n");
+                }
+            }else if (scanner.hasNext("pause") || scanner.hasNext("Pause")){
+                pauseMenu();
+                if(!isRunning)
+                    break;
             }
         }
-        updateAndDisplayBoard();
+        if(isGameContinuing)
+            updateAndDisplayBoard();
         //Checks Game
         checkGame();
     }
@@ -170,11 +185,12 @@ public class Game {
         //Check who won
         if (p1.getWon()) {
             System.out.println("Player 1 has won!");
-        } else {
+        } else if (p2.getWon()){
             System.out.println("Player 2 has won!");
         }
 
         //Setting Game Continuing to false
+        isRunning = false;
         isGameContinuing = false;
     }
 
@@ -183,8 +199,8 @@ public class Game {
         peices[0] = new Rook(0, 0, Peice.Color.White);
         peices[1] = new Knight(1, 0, Peice.Color.White);
         peices[2] = new Bishop(2, 0, Peice.Color.White);
-        peices[3] = new King(3, 0, Peice.Color.White);
-        peices[4] = new Queen(4, 0, Peice.Color.White);
+        peices[3] = new Queen(3, 0, Peice.Color.White);
+        peices[4] = new King(4, 0, Peice.Color.White);
         peices[5] = new Bishop(5, 0, Peice.Color.White);
         peices[6] = new Knight(6, 0, Peice.Color.White);
         peices[7] = new Rook(7, 0, Peice.Color.White);
@@ -204,6 +220,11 @@ public class Game {
         peices[31] = new Rook(7, 7, Peice.Color.Black);
     }
     
+    //This loads the pieces from a file
+    public void loadPieces(Peice[] _pieces){
+        peices = _pieces;
+    }
+    
     //Start menu which will need to run once the game starts
     public void startMenu() {
         //creates a SaveLoadManager object
@@ -221,7 +242,8 @@ public class Game {
                 //Check if manager can load game
                 if (manager.canLoadGame()) {
                     //set the board to the data in the manager
-                    board.setBoard(manager.loadGame());
+                    loadPieces(manager.loadGame());
+                    create();
                     temp = false;
                 } else {
                     System.out.println("Cannot load Game, no such file exists");
@@ -254,6 +276,8 @@ public class Game {
             //Quits Game
             } else if(input.equalsIgnoreCase("Quit")){
                 isRunning = false;
+                isGameContinuing = false;
+                temp = false;
             } else {
                 System.out.println("Please enter a valid option.");
             }
@@ -272,7 +296,7 @@ public class Game {
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("Save")) {
                 //Load existing game from stored file
-                manager.saveGame(board.getBoard());
+                manager.saveGame(peices);
                 temp = false;
             } else if (input.equalsIgnoreCase("Quit")) {
                 //Close the application
@@ -285,11 +309,18 @@ public class Game {
 
     //Does multiple checks & Prints out who contains # peice of Peices
     private void checkGame() {
-        //print out how many peices p1 & p2 has
-
-        //print out how many peices are on board
-        //check if the game is over
-        //if true
+        for(Peice a : peices){
+            if(a.isIsDead()){
+                a = null;
+            }
+        }
+        if(peices[4].isIsDead()){
+            p2.setWon(true);
+            gameOver();
+        }else if(peices[27].isIsDead()){
+            p1.setWon(true);
+            gameOver();
+        }
         //GameOver();
     }
 

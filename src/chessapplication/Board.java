@@ -42,7 +42,11 @@ public class Board {
             }
         }
     }
-
+    
+    public void removePiece(int _x, int _y){
+        board[_x][_y] = null;
+    }
+    
     //Prints the board out to console 
     public void printBoard() {
         int c = 1; 
@@ -58,7 +62,7 @@ public class Board {
             for (Peice a : p) {
                 if (a == null) {
                     System.out.print(" | ## | ");
-                } else {
+                } else if(!a.isIsDead()) {
                     System.out.print(" | " + a.getPeice() + " | ");
                 }
             }
