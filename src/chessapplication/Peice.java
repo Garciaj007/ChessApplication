@@ -4,9 +4,7 @@ public abstract class Peice implements java.io.Serializable {
 
     /* Member Variables */
     //Team Chosen
-    public static enum Color {
-        White, Black
-    };
+    public static enum Color {White, Black};
     private boolean isDead = false;
     //Contains the position of the peice
     private int x, y;

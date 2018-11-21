@@ -1,6 +1,6 @@
 package chessapplication;
 
-public class Player {
+public class Player implements java.io.Serializable{
     /* Member Variables */
     //Enum for player Color
     public static enum Color{White, Black};
@@ -10,9 +10,9 @@ public class Player {
     //# of Peices the player has taken, *NOTE* Can be change later to the actual peices
     private int piecesTaken;
     //Name of the player, optional
-    private final String name;
+    public final String name;
     //Color of the player
-    private final Color color;
+    public final Color color;
     //check if the player is checkmate, and if the player has won
     private boolean checkmate, won;
     
