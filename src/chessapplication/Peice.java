@@ -12,6 +12,8 @@ public abstract class Peice implements java.io.Serializable {
     private Color team;
     //The Placeholder for the peice
     protected String peice;
+    //Contains the Image Path for the peice;
+    protected String imgPath;
 
     /* Getters */
     //Gets X & Y position
@@ -25,6 +27,10 @@ public abstract class Peice implements java.io.Serializable {
 
     public final Color getTeam() {
         return team;
+    }
+    
+    public final String getImagePath(){
+        return imgPath;
     }
 
     public boolean isIsDead() {
@@ -46,8 +52,8 @@ public abstract class Peice implements java.io.Serializable {
     }
 
     /* Constructor */
-    public Peice(int x_, int y_, Color team_) {
-        set(x_, y_, team_);
+    public Peice(int x_, int y_, Color team_, String path) {
+        set(x_, y_, team_, path);
     }
 
     /* Abstract Methods */
@@ -82,9 +88,10 @@ public abstract class Peice implements java.io.Serializable {
     }
 
     //This method forcably sets a peices position
-    protected final void set(int x_, int y_, Color team_) {
+    protected final void set(int x_, int y_, Color team_, String filepath_) {
         x = x_;
         y = y_;
         team = team_;
+        imgPath = filepath_;
     }
 }

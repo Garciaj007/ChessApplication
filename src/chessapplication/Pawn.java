@@ -4,8 +4,8 @@ package chessapplication;
 public class Pawn extends Peice{
     private final int direction;
 
-    public Pawn(int _x, int _y, Color _team) {
-        super(_x, _y, _team);
+    public Pawn(int _x, int _y, Color _team, String _path) {
+        super(_x, _y, _team, _path);
         if(getTeam() == Peice.Color.White){
             direction = 1;
         }

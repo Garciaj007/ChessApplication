@@ -75,7 +75,8 @@ public class Board {
         }
     }
     
+    //Displays board to GUI
     public void displayBoard(){
-        
+        //Update Board By Calling The GUI
     }
 }

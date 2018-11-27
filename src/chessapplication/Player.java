@@ -10,9 +10,9 @@ public class Player implements java.io.Serializable{
     //# of Peices the player has taken, *NOTE* Can be change later to the actual peices
     private int piecesTaken;
     //Name of the player, optional
-    public final String name;
+    private final String name;
     //Color of the player
-    public final Color color;
+    private final Color color;
     //check if the player is checkmate, and if the player has won
     private boolean checkmate, won;
     

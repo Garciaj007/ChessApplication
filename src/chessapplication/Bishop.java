@@ -4,8 +4,8 @@ package chessapplication;
 
 public class Bishop extends Peice{
 
-    public Bishop(int _x, int _y, Color _team) {
-        super(_x, _y, _team);
+    public Bishop(int _x, int _y, Color _team, String _path) {
+        super(_x, _y, _team, _path);
         this.peice = "B";
     }
     

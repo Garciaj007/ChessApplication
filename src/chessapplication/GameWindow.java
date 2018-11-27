@@ -111,6 +111,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton65.setBackground(new java.awt.Color(0, 153, 204));
         jButton65.setText("Load");
         jButton65.setBorder(null);
+        jButton65.setBorderPainted(false);
+        jButton65.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton65.setRolloverEnabled(true);
         jButton65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton65ActionPerformed(evt);
@@ -120,6 +123,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton66.setBackground(new java.awt.Color(0, 153, 204));
         jButton66.setText("Save");
         jButton66.setBorder(null);
+        jButton66.setBorderPainted(false);
+        jButton66.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton66.setRolloverEnabled(true);
         jButton66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton66ActionPerformed(evt);
@@ -129,6 +135,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton67.setBackground(new java.awt.Color(0, 153, 204));
         jButton67.setText("New");
         jButton67.setBorder(null);
+        jButton67.setBorderPainted(false);
+        jButton67.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton67.setRolloverEnabled(true);
         jButton67.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton67ActionPerformed(evt);
@@ -143,451 +152,581 @@ public class GameWindow extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(24, 24, 24));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChessImages/WhiteRook.png"))); // NOI18N
         jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
         jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton1.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton1.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton1.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton1.setRolloverEnabled(true);
 
         jButton2.setBackground(new java.awt.Color(147, 147, 147));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChessImages/WhiteHorse.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
         jButton2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton2.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton2.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton2.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton2.setRolloverEnabled(true);
 
         jButton3.setBackground(new java.awt.Color(24, 24, 24));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChessImages/WhiteBishop.png"))); // NOI18N
         jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
         jButton3.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton3.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton3.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton3.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton3.setRolloverEnabled(true);
 
         jButton4.setBackground(new java.awt.Color(147, 147, 147));
         jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
         jButton4.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton4.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton4.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton4.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton4.setRolloverEnabled(true);
 
         jButton5.setBackground(new java.awt.Color(24, 24, 24));
         jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
         jButton5.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton5.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton5.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton5.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton5.setRolloverEnabled(true);
 
         jButton6.setBackground(new java.awt.Color(147, 147, 147));
         jButton6.setBorder(null);
+        jButton6.setBorderPainted(false);
         jButton6.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton6.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton6.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton6.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton6.setRolloverEnabled(true);
 
         jButton7.setBackground(new java.awt.Color(24, 24, 24));
         jButton7.setBorder(null);
+        jButton7.setBorderPainted(false);
         jButton7.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton7.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton7.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton7.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton7.setRolloverEnabled(true);
 
         jButton8.setBackground(new java.awt.Color(147, 147, 147));
         jButton8.setBorder(null);
+        jButton8.setBorderPainted(false);
         jButton8.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton8.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton8.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton8.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton8.setRolloverEnabled(true);
 
         jButton9.setBackground(new java.awt.Color(147, 147, 147));
         jButton9.setBorder(null);
+        jButton9.setBorderPainted(false);
         jButton9.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton9.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton9.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton9.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton9.setRolloverEnabled(true);
 
         jButton10.setBackground(new java.awt.Color(24, 24, 24));
         jButton10.setBorder(null);
+        jButton10.setBorderPainted(false);
         jButton10.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton10.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton10.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton10.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton10.setRolloverEnabled(true);
 
         jButton11.setBackground(new java.awt.Color(147, 147, 147));
         jButton11.setBorder(null);
+        jButton11.setBorderPainted(false);
         jButton11.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton11.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton11.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton11.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton11.setRolloverEnabled(true);
 
         jButton12.setBackground(new java.awt.Color(24, 24, 24));
         jButton12.setBorder(null);
+        jButton12.setBorderPainted(false);
         jButton12.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton12.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton12.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton12.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton12.setRolloverEnabled(true);
 
         jButton13.setBackground(new java.awt.Color(147, 147, 147));
         jButton13.setBorder(null);
+        jButton13.setBorderPainted(false);
         jButton13.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton13.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton13.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton13.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton13.setRolloverEnabled(true);
 
         jButton14.setBackground(new java.awt.Color(24, 24, 24));
         jButton14.setBorder(null);
+        jButton14.setBorderPainted(false);
         jButton14.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton14.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton14.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton14.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton14.setRolloverEnabled(true);
 
         jButton15.setBackground(new java.awt.Color(147, 147, 147));
         jButton15.setBorder(null);
+        jButton15.setBorderPainted(false);
         jButton15.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton15.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton15.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton15.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton15.setRolloverEnabled(true);
 
         jButton16.setBackground(new java.awt.Color(24, 24, 24));
         jButton16.setBorder(null);
+        jButton16.setBorderPainted(false);
         jButton16.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton16.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton16.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton16.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton16.setRolloverEnabled(true);
 
         jButton17.setBackground(new java.awt.Color(147, 147, 147));
         jButton17.setBorder(null);
+        jButton17.setBorderPainted(false);
         jButton17.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton17.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton17.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton17.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton17.setRolloverEnabled(true);
 
         jButton18.setBackground(new java.awt.Color(24, 24, 24));
         jButton18.setBorder(null);
+        jButton18.setBorderPainted(false);
         jButton18.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton18.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton18.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton18.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton18.setRolloverEnabled(true);
 
         jButton19.setBackground(new java.awt.Color(147, 147, 147));
         jButton19.setBorder(null);
+        jButton19.setBorderPainted(false);
         jButton19.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton19.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton19.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton19.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton19.setRolloverEnabled(true);
 
         jButton20.setBackground(new java.awt.Color(24, 24, 24));
         jButton20.setBorder(null);
+        jButton20.setBorderPainted(false);
         jButton20.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton20.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton20.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton20.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton20.setRolloverEnabled(true);
 
         jButton21.setBackground(new java.awt.Color(147, 147, 147));
         jButton21.setBorder(null);
+        jButton21.setBorderPainted(false);
         jButton21.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton21.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton21.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton21.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton21.setRolloverEnabled(true);
 
         jButton22.setBackground(new java.awt.Color(24, 24, 24));
         jButton22.setBorder(null);
+        jButton22.setBorderPainted(false);
         jButton22.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton22.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton22.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton22.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton22.setRolloverEnabled(true);
 
         jButton23.setBackground(new java.awt.Color(24, 24, 24));
         jButton23.setBorder(null);
+        jButton23.setBorderPainted(false);
         jButton23.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton23.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton23.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton23.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton23.setRolloverEnabled(true);
 
         jButton24.setBackground(new java.awt.Color(147, 147, 147));
         jButton24.setBorder(null);
+        jButton24.setBorderPainted(false);
         jButton24.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton24.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton24.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton24.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton24.setRolloverEnabled(true);
 
         jButton25.setBackground(new java.awt.Color(147, 147, 147));
         jButton25.setBorder(null);
+        jButton25.setBorderPainted(false);
         jButton25.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton25.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton25.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton25.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton25.setRolloverEnabled(true);
 
         jButton26.setBackground(new java.awt.Color(147, 147, 147));
         jButton26.setBorder(null);
+        jButton26.setBorderPainted(false);
         jButton26.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton26.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton26.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton26.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton26.setRolloverEnabled(true);
 
         jButton27.setBackground(new java.awt.Color(147, 147, 147));
         jButton27.setBorder(null);
+        jButton27.setBorderPainted(false);
         jButton27.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton27.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton27.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton27.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton27.setRolloverEnabled(true);
 
         jButton28.setBackground(new java.awt.Color(24, 24, 24));
         jButton28.setBorder(null);
+        jButton28.setBorderPainted(false);
         jButton28.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton28.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton28.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton28.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton28.setRolloverEnabled(true);
 
         jButton29.setBackground(new java.awt.Color(24, 24, 24));
         jButton29.setBorder(null);
+        jButton29.setBorderPainted(false);
         jButton29.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton29.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton29.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton29.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton29.setRolloverEnabled(true);
 
         jButton30.setBackground(new java.awt.Color(147, 147, 147));
         jButton30.setBorder(null);
+        jButton30.setBorderPainted(false);
         jButton30.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton30.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton30.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton30.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton30.setRolloverEnabled(true);
 
         jButton31.setBackground(new java.awt.Color(24, 24, 24));
         jButton31.setBorder(null);
+        jButton31.setBorderPainted(false);
         jButton31.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton31.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton31.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton31.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton31.setRolloverEnabled(true);
 
         jButton32.setBackground(new java.awt.Color(24, 24, 24));
         jButton32.setBorder(null);
+        jButton32.setBorderPainted(false);
         jButton32.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton32.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton32.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton32.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton32.setRolloverEnabled(true);
 
         jButton33.setBackground(new java.awt.Color(147, 147, 147));
         jButton33.setBorder(null);
+        jButton33.setBorderPainted(false);
         jButton33.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton33.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton33.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton33.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton33.setRolloverEnabled(true);
 
         jButton34.setBackground(new java.awt.Color(147, 147, 147));
         jButton34.setBorder(null);
+        jButton34.setBorderPainted(false);
         jButton34.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton34.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton34.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton34.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton34.setRolloverEnabled(true);
 
         jButton35.setBackground(new java.awt.Color(24, 24, 24));
         jButton35.setBorder(null);
+        jButton35.setBorderPainted(false);
         jButton35.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton35.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton35.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton35.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton35.setRolloverEnabled(true);
 
         jButton36.setBackground(new java.awt.Color(24, 24, 24));
         jButton36.setBorder(null);
+        jButton36.setBorderPainted(false);
         jButton36.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton36.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton36.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton36.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton36.setRolloverEnabled(true);
 
         jButton37.setBackground(new java.awt.Color(147, 147, 147));
         jButton37.setBorder(null);
+        jButton37.setBorderPainted(false);
         jButton37.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton37.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton37.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton37.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton37.setRolloverEnabled(true);
 
         jButton38.setBackground(new java.awt.Color(147, 147, 147));
         jButton38.setBorder(null);
+        jButton38.setBorderPainted(false);
         jButton38.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton38.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton38.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton38.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton38.setRolloverEnabled(true);
 
         jButton39.setBackground(new java.awt.Color(24, 24, 24));
         jButton39.setBorder(null);
+        jButton39.setBorderPainted(false);
         jButton39.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton39.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton39.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton39.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton39.setRolloverEnabled(true);
 
         jButton40.setBackground(new java.awt.Color(24, 24, 24));
         jButton40.setBorder(null);
+        jButton40.setBorderPainted(false);
         jButton40.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton40.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton40.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton40.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton40.setRolloverEnabled(true);
 
         jButton41.setBackground(new java.awt.Color(147, 147, 147));
         jButton41.setBorder(null);
+        jButton41.setBorderPainted(false);
         jButton41.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton41.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton41.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton41.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton41.setRolloverEnabled(true);
 
         jButton42.setBackground(new java.awt.Color(24, 24, 24));
         jButton42.setBorder(null);
+        jButton42.setBorderPainted(false);
         jButton42.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton42.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton42.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton42.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton42.setRolloverEnabled(true);
 
         jButton43.setBackground(new java.awt.Color(147, 147, 147));
         jButton43.setBorder(null);
+        jButton43.setBorderPainted(false);
         jButton43.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton43.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton43.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton43.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton43.setRolloverEnabled(true);
 
         jButton44.setBackground(new java.awt.Color(24, 24, 24));
         jButton44.setBorder(null);
+        jButton44.setBorderPainted(false);
         jButton44.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton44.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton44.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton44.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton44.setRolloverEnabled(true);
 
         jButton45.setBackground(new java.awt.Color(147, 147, 147));
         jButton45.setBorder(null);
+        jButton45.setBorderPainted(false);
         jButton45.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton45.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton45.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton45.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton45.setRolloverEnabled(true);
 
         jButton46.setBackground(new java.awt.Color(24, 24, 24));
         jButton46.setBorder(null);
+        jButton46.setBorderPainted(false);
         jButton46.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton46.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton46.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton46.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton46.setRolloverEnabled(true);
 
         jButton47.setBackground(new java.awt.Color(147, 147, 147));
         jButton47.setBorder(null);
+        jButton47.setBorderPainted(false);
         jButton47.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton47.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton47.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton47.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton47.setRolloverEnabled(true);
 
         jButton48.setBackground(new java.awt.Color(24, 24, 24));
         jButton48.setBorder(null);
+        jButton48.setBorderPainted(false);
         jButton48.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton48.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton48.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton48.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton48.setRolloverEnabled(true);
 
         jButton49.setBackground(new java.awt.Color(147, 147, 147));
         jButton49.setBorder(null);
+        jButton49.setBorderPainted(false);
         jButton49.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton49.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton49.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton49.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton49.setRolloverEnabled(true);
 
         jButton50.setBackground(new java.awt.Color(24, 24, 24));
         jButton50.setBorder(null);
+        jButton50.setBorderPainted(false);
         jButton50.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton50.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton50.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton50.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton50.setRolloverEnabled(true);
 
         jButton51.setBackground(new java.awt.Color(24, 24, 24));
         jButton51.setBorder(null);
+        jButton51.setBorderPainted(false);
         jButton51.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton51.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton51.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton51.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton51.setRolloverEnabled(true);
 
         jButton52.setBackground(new java.awt.Color(147, 147, 147));
         jButton52.setBorder(null);
+        jButton52.setBorderPainted(false);
         jButton52.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton52.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton52.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton52.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton52.setRolloverEnabled(true);
 
         jButton53.setBackground(new java.awt.Color(24, 24, 24));
         jButton53.setBorder(null);
+        jButton53.setBorderPainted(false);
         jButton53.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton53.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton53.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton53.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton53.setRolloverEnabled(true);
 
         jButton54.setBackground(new java.awt.Color(147, 147, 147));
         jButton54.setBorder(null);
+        jButton54.setBorderPainted(false);
         jButton54.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton54.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton54.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton54.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton54.setRolloverEnabled(true);
 
         jButton55.setBackground(new java.awt.Color(24, 24, 24));
         jButton55.setBorder(null);
+        jButton55.setBorderPainted(false);
         jButton55.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton55.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton55.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton55.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton55.setRolloverEnabled(true);
 
         jButton56.setBackground(new java.awt.Color(147, 147, 147));
         jButton56.setBorder(null);
+        jButton56.setBorderPainted(false);
         jButton56.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton56.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton56.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton56.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton56.setRolloverEnabled(true);
 
         jButton57.setBackground(new java.awt.Color(24, 24, 24));
         jButton57.setBorder(null);
+        jButton57.setBorderPainted(false);
         jButton57.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton57.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton57.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton57.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton57.setRolloverEnabled(true);
 
         jButton58.setBackground(new java.awt.Color(147, 147, 147));
         jButton58.setBorder(null);
+        jButton58.setBorderPainted(false);
         jButton58.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton58.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton58.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton58.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton58.setRolloverEnabled(true);
 
         jButton59.setBackground(new java.awt.Color(147, 147, 147));
         jButton59.setBorder(null);
+        jButton59.setBorderPainted(false);
         jButton59.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton59.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton59.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton59.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton59.setRolloverEnabled(true);
 
         jButton60.setBackground(new java.awt.Color(24, 24, 24));
         jButton60.setBorder(null);
+        jButton60.setBorderPainted(false);
         jButton60.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton60.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton60.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton60.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton60.setRolloverEnabled(true);
 
         jButton61.setBackground(new java.awt.Color(24, 24, 24));
         jButton61.setBorder(null);
+        jButton61.setBorderPainted(false);
         jButton61.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton61.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton61.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton61.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton61.setRolloverEnabled(true);
 
         jButton62.setBackground(new java.awt.Color(24, 24, 24));
         jButton62.setBorder(null);
+        jButton62.setBorderPainted(false);
         jButton62.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton62.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton62.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton62.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton62.setRolloverEnabled(true);
 
         jButton63.setBackground(new java.awt.Color(147, 147, 147));
         jButton63.setBorder(null);
+        jButton63.setBorderPainted(false);
         jButton63.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton63.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton63.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton63.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton63.setRolloverEnabled(true);
 
         jButton64.setBackground(new java.awt.Color(147, 147, 147));
         jButton64.setBorder(null);
+        jButton64.setBorderPainted(false);
         jButton64.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton64.setMaximumSize(new java.awt.Dimension(256, 256));
         jButton64.setMinimumSize(new java.awt.Dimension(32, 32));
         jButton64.setPreferredSize(new java.awt.Dimension(62, 62));
+        jButton64.setRolloverEnabled(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -858,51 +997,53 @@ public class GameWindow extends javax.swing.JFrame {
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
         // TODO add your handling code here:
-        
+        System.out.print(evt);
     }//GEN-LAST:event_jButton65ActionPerformed
 
     private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
         // TODO add your handling code here:
+        System.out.print(evt);
     }//GEN-LAST:event_jButton66ActionPerformed
 
     private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
         // TODO add your handling code here:
+        System.out.print(evt);
     }//GEN-LAST:event_jButton67ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GameWindow().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(GameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new GameWindow().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
