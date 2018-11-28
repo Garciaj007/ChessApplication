@@ -7,7 +7,6 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseListener;
 import javax.swing.*;
 
 public class Window extends JFrame {
@@ -124,8 +123,6 @@ public class Window extends JFrame {
                 Peice p = b.getBoard()[i][j];
                 if (p != null) {
                     chessButtons[i][j].setIcon(Utils.resizeIcon(new ImageIcon(this.getClass().getResource(p.imgPath)), chessButtons[i][j].getSize().width, chessButtons[i][j].getSize().height));
-                    chessButtons[i][j].repaint();
-                    System.out.println("Displaying Peice" + p);
                 } else {
                     chessButtons[i][j].setIcon(null);
                 }
@@ -138,7 +135,7 @@ public class Window extends JFrame {
         for (int i = 0; i < chessButtons.length; i++) {
             for (int j = 0; j < chessButtons[i].length; j++) {
                 if (e.getSource() == chessButtons[i][j]) {
-                    
+
                     if (peiceSelected != null) {
                         if (board.getBoard()[i][j] == null) {
                             if (peiceSelected.canMoveTo(i, j)) {
@@ -150,8 +147,8 @@ public class Window extends JFrame {
                                 setMsg("Selct Peice to Move");
                             } else {
                                 setMsg("Invalid Move, Please Select Again");
-                            } 
-                               
+                            }
+
                         } else {
                             setMsg("Invalid Select, Deselect, select a white space");
                         }
@@ -163,7 +160,7 @@ public class Window extends JFrame {
                                 setMsg("Invalid Selection, Please Select Again");
                             } else {
                                 setMsg("Select Place to Move");
-                            }  
+                            }
                         }
                     }
 

@@ -46,6 +46,5 @@ public class ChessApplication {
         while(g.getIsRunning()){
             g.Run();
         }
-        g.exitMenu();
     }
 }
